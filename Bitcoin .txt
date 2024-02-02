@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+import csv
+
+x = []
+y = []
+
+with open('bitcoin.csv',) as csvfile:
+    plots = csv.reader(csvfile, delimiter=',')
+
+    for row in plots:
+        x.append(row[0])
+        y.append(row[2])
+
+plt.bar(x, y, color='g', width=0.72, label="Close")
+plt.bar(x, y, color='g', width=0.72, label="Date")
+plt.xlabel('Date')
+plt.ylabel('High')
+plt.title('Low')
+plt.legend()
+plt.show()
